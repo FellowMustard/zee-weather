@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+p {
+  margin: 0;
+}
+.background-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-main.morning {
+  background: rgb(226, 193, 116);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(226, 193, 116, 1) 0%,
+    rgba(139, 211, 238, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(226, 193, 116, 1) 0%,
+    rgba(139, 211, 238, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(226, 193, 116, 1) 0%,
+    rgba(139, 211, 238, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2c174",endColorstr="#8bd3ee",GradientType=1);
+}
+
+.background-main.noon {
+  background: rgb(139, 186, 228);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(139, 186, 228, 1) 0%,
+    rgba(84, 131, 187, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(139, 186, 228, 1) 0%,
+    rgba(84, 131, 187, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(139, 186, 228, 1) 0%,
+    rgba(84, 131, 187, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8bbae4",endColorstr="#5483bb",GradientType=1);
+}
+.background-main.evening {
+  background: rgb(233, 168, 97);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(233, 168, 97, 1) 0%,
+    rgba(121, 142, 190, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(233, 168, 97, 1) 0%,
+    rgba(121, 142, 190, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(233, 168, 97, 1) 0%,
+    rgba(121, 142, 190, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e9a861",endColorstr="#798ebe",GradientType=1);
+}
+
+.background-main.night {
+  background: rgb(0, 66, 116);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(0, 66, 116, 1) 0%,
+    rgba(1, 33, 74, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(0, 66, 116, 1) 0%,
+    rgba(1, 33, 74, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(0, 66, 116, 1) 0%,
+    rgba(1, 33, 74, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#004274",endColorstr="#01214a",GradientType=1);
+}
+
+.weather-card {
+  width: 80vw;
+  height: 65vw;
+  max-width: 650px;
+  min-width: 300px;
+  min-height: 350px;
+  max-height: 450px;
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.night .weather-card {
+  background: rgba(0, 0, 0, 0.17);
+}
+.weather-card .top-section {
+  background: rgb(0, 0, 0, 0.8);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+}
+.weather-card .middle-section {
+  padding: 8px 20px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0px 2px 1px #2a2a2a;
+  font-size: 1rem;
+}
+.timezone-time {
+  font-size: 3.5rem;
+}
