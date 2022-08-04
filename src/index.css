@@ -131,6 +131,7 @@ p {
   padding: 8px 20px;
 }
 .weather-card .middle-section {
+  flex: 2;
   padding: 8px 20px;
   font-weight: 600;
   color: #fff;
@@ -139,4 +140,52 @@ p {
 }
 .timezone-time {
   font-size: 3.5rem;
+}
+.weather-card .bottom-section {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(0, 0, 0, 0.8);
+  padding: 8px 20px;
+}
+.bottom-section .place-name {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.location-name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3rem;
+}
+.country-name {
+  font-weight: 300;
+  font-size: 1rem;
+  margin-left: 1px;
+}
+.temperature-box {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.temperature {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  top: -135%;
+  left: -110%;
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: 0px 2px 1px #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #686868;
+}
+.temperature-scale {
+  font-size: 2rem;
 }

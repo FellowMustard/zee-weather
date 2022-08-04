@@ -58,15 +58,33 @@ function App() {
         minute: "2-digit",
       })
       .substr(0, 5);
-    console.log(currTime);
 
     let currHour = currTime.substr(0, 2);
+
+    let isPM =
+      today.toLocaleTimeString("en-UK", {
+        timeZone: data.location.tz_id,
+        hour: "2-digit",
+      }) >= 12
+        ? true
+        : false;
+
     let isDay = data.location.is_day;
+    let currLocation = data.location.name;
+    let currCountry = data.location.country;
+    let currTempC = data.current.temp_c;
+    let currTempF = data.current.temp_f;
+    console.log(data);
     setWeatherData({
       day: currDayName,
       date: currDate,
       time: currTime,
+      isPM,
       isDay,
+      location: currLocation,
+      country: currCountry,
+      tempC: currTempC,
+      tempF: currTempF,
     });
   };
   return (
