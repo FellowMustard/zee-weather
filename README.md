@@ -1,10 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+## Zee-Weather
+`simple weather app created using react js with the help of [WeatherAPI.com](https://www.weatherapi.com/).`
 
 ### `yarn start`
 
