@@ -61,7 +61,6 @@ function App() {
         minute: "2-digit",
       })
       .substr(0, 5);
-    console.log(currTime);
 
     let isPM =
       today.toLocaleTimeString("en-UK", {
@@ -71,10 +70,13 @@ function App() {
         ? true
         : false;
 
-    let currHour = currTime.substr(0, 2);
-    currHour = "00" & isPM ? 12 : currHour;
+    let currHour = today
+      .toLocaleTimeString("en-UK", {
+        timeZone: data.location.tz_id,
+        hour: "2-digit",
+      })
+      .substr(0, 5);
     bgChange(currHour);
-
     let isDay = data.location.is_day;
     let currLocation = data.location.name;
     let currCountry = data.location.country;
@@ -96,7 +98,6 @@ function App() {
 
   const bgChange = (hour) => {
     hour = parseInt(hour);
-    console.log(hour >= 6);
     switch (hour) {
       case 1:
       case 2:
@@ -130,7 +131,6 @@ function App() {
       case 4:
       case 3:
       default:
-        console.log("why");
         setBgSetting("midnight");
         break;
     }

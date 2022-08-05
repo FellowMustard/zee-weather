@@ -6,6 +6,11 @@ function Search({ searchButton }) {
     e.preventDefault();
     setSearch(e.target.value);
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      searchButton(search);
+    }
+  };
   return (
     <section className="search-container">
       <input
@@ -13,6 +18,7 @@ function Search({ searchButton }) {
         placeholder="Search Location"
         className="search-input"
         onChange={(e) => searchBar(e)}
+        onKeyDown={handleKeyDown}
       />
       <button className="search-button" onClick={() => searchButton(search)}>
         <AiOutlineSearch style={{ fontSize: "20px" }} />
