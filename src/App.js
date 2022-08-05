@@ -61,9 +61,7 @@ function App() {
         minute: "2-digit",
       })
       .substr(0, 5);
-
-    let currHour = currTime.substr(0, 2);
-    bgChange(currHour);
+    console.log(currTime);
 
     let isPM =
       today.toLocaleTimeString("en-UK", {
@@ -72,6 +70,10 @@ function App() {
       }) >= 12
         ? true
         : false;
+
+    let currHour = currTime.substr(0, 2);
+    currHour = "00" & isPM ? 12 : currHour;
+    bgChange(currHour);
 
     let isDay = data.location.is_day;
     let currLocation = data.location.name;
