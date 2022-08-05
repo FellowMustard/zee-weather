@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
+import Search from "./components/search";
 
 function App() {
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const [weatherData, setWeatherData] = useState(null);
   const [searchError, setSearchError] = useState(false);
+  const [bgSetting, setBgSetting] = useState("morning");
 
-  const options = {
-    params: { q: "london" },
-    headers: {
-      "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
-      "X-RapidAPI-Host": process.env.REACT_APP_API_HOST,
-    },
+  const searchButton = (data) => {
+    setSearchError(false);
+    let options = {
+      params: { q: data },
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Host": process.env.REACT_APP_API_HOST,
+      },
+    };
+    fetchData(options);
   };
 
-  const fetchData = async () => {
+  const fetchData = async (options) => {
     const data = await axios
       .get(process.env.REACT_APP_API_LINK, options)
       .then((res) => {
@@ -31,6 +33,7 @@ function App() {
       updateData(data.data);
     } else {
       setSearchError(true);
+      console.log("error ehe");
     }
   };
 
@@ -60,6 +63,7 @@ function App() {
       .substr(0, 5);
 
     let currHour = currTime.substr(0, 2);
+    bgChange(currHour);
 
     let isPM =
       today.toLocaleTimeString("en-UK", {
@@ -74,7 +78,7 @@ function App() {
     let currCountry = data.location.country;
     let currTempC = data.current.temp_c;
     let currTempF = data.current.temp_f;
-    console.log(data);
+
     setWeatherData({
       day: currDayName,
       date: currDate,
@@ -87,8 +91,51 @@ function App() {
       tempF: currTempF,
     });
   };
+
+  const bgChange = (hour) => {
+    hour = parseInt(hour);
+    console.log(hour >= 6);
+    switch (hour) {
+      case 1:
+      case 2:
+      case 24:
+      case 23:
+      case 22:
+      case 21:
+      case 20:
+      case 19:
+        setBgSetting("night");
+      case 18:
+      case 17:
+      case 16:
+      case 15:
+        setBgSetting("evening");
+        break;
+      case 14:
+      case 13:
+      case 12:
+      case 11:
+        setBgSetting("noon");
+        break;
+      case 10:
+      case 9:
+      case 8:
+      case 7:
+      case 6:
+        setBgSetting("morning");
+        break;
+      case 5:
+      case 4:
+      case 3:
+      default:
+        console.log("why");
+        setBgSetting("midnight");
+        break;
+    }
+  };
   return (
-    <main className="background-main morning">
+    <main className={`background-main ${bgSetting}`}>
+      <Search searchButton={searchButton} />
       {weatherData && !searchError ? <Card weather={weatherData} /> : null}
     </main>
   );

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import SvgContainer from "./svg";
 function Card({ weather }) {
   return (
     <section className="weather-card">
@@ -18,9 +19,19 @@ function Card({ weather }) {
           <span className="location-name">{weather.location}</span>
           <span className="country-name">{weather.country}</span>
         </p>
+
+        <div className="termometer-info">
+          <div className="termometer-svg">
+            <SvgContainer svgID="0001" />
+          </div>
+          <button>C</button>
+          <span style={{ marginTop: "-5px" }}>|</span>
+          <button>F</button>
+        </div>
+
         <div className="temperature-box">
           <div className="temperature">
-            {weather.tempC}°<span className="temperature-scale">C</span>
+            <span>{weather.tempC}°</span>
           </div>
         </div>
       </div>
