@@ -28,6 +28,8 @@ button {
   height: 100vh;
   flex-direction: column;
   gap: 15px;
+  position: relative;
+  overflow: hidden;
 }
 .background-main.midnight {
   background: rgb(107, 70, 51);
@@ -253,7 +255,7 @@ button {
   top: -135%;
   left: -110%;
   font-weight: 600;
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   color: #fff;
   text-shadow: 0px 2px 1px #2a2a2a;
   display: flex;
@@ -265,8 +267,57 @@ button {
   -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.65) inset;
   -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.65) inset;
 }
+.error-message {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  margin-top: -5px;
+  background-color: #ad2c2c;
+  animation: errorShake 0.5s ease;
+}
 .hidden {
   display: none;
+}
+.github-logo {
+  position: absolute;
+  color: #666666 !important;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s ease;
+  bottom: 10px;
+  right: 10px;
+}
+.github-logo:hover {
+  transform: scale(1.2);
+  color: #161b22 !important;
+}
+.github-logo .logo {
+  width: 100%;
+  height: 100%;
+}
+@keyframes errorShake {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  40% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    ransform: translateX(0px);
+  }
 }
 @keyframes cardOpen {
   0% {

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
 import Search from "./components/search";
+import { AiFillGithub } from "react-icons/ai";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [searchError, setSearchError] = useState(false);
   const [bgSetting, setBgSetting] = useState("morning");
-  const [isCelcius, setIsCelcius] = useState(true);
 
   const searchButton = (data) => {
     setSearchError(false);
@@ -34,13 +34,12 @@ function App() {
       updateData(data.data);
     } else {
       setSearchError(true);
-      console.log("error ehe");
     }
   };
 
   const updateData = (data) => {
     let today = new Date();
-    // GET FULL DATE
+
     let currDayName = today.toLocaleString("en-UK", {
       timeZone: data.location.tz_id,
       weekday: "long",
@@ -53,7 +52,6 @@ function App() {
       year: "numeric",
     });
 
-    //GET TIME
     let currTime = today
       .toLocaleTimeString("en-UK", {
         timeZone: data.location.tz_id,
@@ -78,6 +76,7 @@ function App() {
       })
       .substr(0, 5);
     bgChange(currHour);
+
     let isDay = data.location.is_day;
     let currLocation = data.location.name;
     let currCountry = data.location.country;
@@ -94,7 +93,6 @@ function App() {
       country: currCountry,
       tempC: currTempC,
       tempF: currTempF,
-      isCelcius,
     });
   };
 
@@ -144,7 +142,14 @@ function App() {
   return (
     <main className={`background-main ${bgSetting}`}>
       <Search searchButton={searchButton} />
+      {searchError && <p className="error-message">Location Not Found</p>}
       {weatherData && !searchError ? <Card weather={weatherData} /> : null}
+      <a
+        href="https://github.com/FellowMustard/zee-weather"
+        className="github-logo"
+      >
+        <AiFillGithub className="logo" />
+      </a>
     </main>
   );
 }

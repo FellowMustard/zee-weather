@@ -11,7 +11,7 @@ List of feature that i planned to implement for future updates:
 - [x] Search Function
 - [x] Convert Temperature Scale Function
 - [x] Background Changes According to Location Time
-- [ ] Error Message
+- [x] Error Message
 - [ ] Temperature Box Changes Color According to Temperature
 - [ ] Meta Tags
 - And a Lot More..
