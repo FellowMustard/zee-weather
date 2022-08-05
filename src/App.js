@@ -8,8 +8,19 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [searchError, setSearchError] = useState(false);
   const [bgSetting, setBgSetting] = useState("morning");
+  const [locationName, setLocationName] = useState("");
+
+  const getIP = async () => {
+    const currIP = await axios
+      .get("https://geolocation-db.com/json/")
+      .then((res) => {
+        return res;
+      });
+    return currIP;
+  };
 
   const searchButton = (data) => {
+    console.log(data);
     setSearchError(false);
     let options = {
       params: { q: data },
@@ -94,6 +105,7 @@ function App() {
       tempC: currTempC,
       tempF: currTempF,
     });
+    setLocationName(currLocation);
   };
 
   const bgChange = (hour) => {
@@ -141,7 +153,13 @@ function App() {
   };
   return (
     <main className={`background-main ${bgSetting}`}>
-      <Search searchButton={searchButton} />
+      <Search searchButton={searchButton} locationName={locationName} />
+      <button
+        className="current-location-button"
+        onClick={() => getIP().then((res) => searchButton(res.data.IPv4))}
+      >
+        Use My Current Location
+      </button>
       {searchError && <p className="error-message">Location Not Found</p>}
       {weatherData && !searchError ? <Card weather={weatherData} /> : null}
       <a

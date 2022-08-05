@@ -12,7 +12,9 @@ List of feature that i planned to implement for future updates:
 - [x] Convert Temperature Scale Function
 - [x] Background Changes According to Location Time
 - [x] Error Message
+- [x] Get Current Location Button
 - [ ] Temperature Box Changes Color According to Temperature
+- [ ] Adding svg Icon According to the Weather 🌦️
 - [ ] Meta Tags
 - And a Lot More..
 

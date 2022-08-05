@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-function Search({ searchButton }) {
+function Search({ searchButton, locationName }) {
   const [search, setSearch] = useState("");
   const searchBar = (e) => {
     e.preventDefault();
@@ -16,6 +16,7 @@ function Search({ searchButton }) {
       <input
         type="text"
         placeholder="Search Location"
+        defaultValue={locationName.length > 0 ? locationName : ""}
         className="search-input"
         onChange={(e) => searchBar(e)}
         onKeyDown={handleKeyDown}

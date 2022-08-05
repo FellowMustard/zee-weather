@@ -24,12 +24,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   flex-direction: column;
   gap: 15px;
   position: relative;
-  overflow: hidden;
 }
 .background-main.midnight {
   background: rgb(107, 70, 51);
@@ -129,6 +128,7 @@ button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#004274",endColorstr="#01214a",GradientType=1);
 }
 .search-container {
+  align-items: center;
   width: 60vw;
   max-width: 450px;
   min-width: 300px;
@@ -156,6 +156,18 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.current-location-button {
+  margin-top: -8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #ff9f2e;
+  color: #fff;
+  font-weight: 600;
+}
+.current-location-button:hover {
+  background: #ce7e21;
+  border-bottom: 0;
 }
 .weather-card {
   width: 80vw;
@@ -205,6 +217,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 280px;
 }
 .location-name {
   font-size: 2rem;
@@ -338,6 +351,22 @@ button {
   }
 }
 @media only screen and (max-width: 600px) {
+  .background-main {
+    padding: 2rem 0;
+  }
+  .search-container {
+    padding: 4px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search-input {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .search-button {
+    width: 25px;
+    height: 25px;
+  }
   .timezone-time {
     font-size: 2.5rem;
   }
@@ -362,19 +391,45 @@ button {
     width: 50px;
     height: 50px;
     font-size: 1.6rem;
-    top: -10%;
+    top: -5%;
     left: -20%;
     border: 2px solid #fff;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65) inset;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65) inset;
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65) inset;
+    text-shadow: 0px 1px 1px #2a2a2a;
+  }
+  .github-logo {
+    position: absolute;
+    color: #161b22 !important;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s ease;
+    bottom: 10px;
+    right: 10px;
+  }
+  .bottom-section .place-name {
+    max-width: 150px;
   }
 }
 @media only screen and (max-width: 380px) {
+  .background-main {
+    padding: 2rem 0;
+  }
   .search-container {
     width: 220px;
     min-width: 220px;
     max-width: 220px;
+    padding: 4px 10px;
+  }
+  .search-input {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .search-button {
+    width: 20px;
+    height: 20px;
   }
   .timezone-time {
     font-size: 2.5rem;
@@ -391,8 +446,8 @@ button {
     margin-left: 0px;
   }
   .termometer-svg {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-right: -10px;
     margin-left: -30px;
   }
@@ -402,5 +457,18 @@ button {
     font-size: 1rem;
     top: 0%;
     left: -10%;
+  }
+  .github-logo {
+    position: absolute;
+    color: #161b22 !important;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease;
+    bottom: 10px;
+    right: 10px;
+  }
+  .bottom-section .place-name {
+    max-width: 100px;
   }
 }
