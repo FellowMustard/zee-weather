@@ -36,3 +36,8 @@ yarn start
 ```
 
 ### Or you can just visit this link [zee-weather.vercel.app](https://zee-weather.vercel.app/)
+
+## Tech I Use in this Project:
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"  height="30" width="40"/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"  height="30" width="40"/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"  height="30" width="40"/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" width="40"/>
+          
+          
