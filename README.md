@@ -10,6 +10,7 @@ List of feature that i planned to implement for future updates:
 - [ ] Error Message 
 - [ ] Convert Temperature Scale Function
 - [ ] Temperature Box Changes Color According to Temperature
+- [ ] Meta Tags
 - And a Lot More..
 
 ## Demo Project
