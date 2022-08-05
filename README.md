@@ -4,6 +4,7 @@ Simple weather app created using react js with the help of [WeatherAPI.com](http
 ## Project Feature
 List of feature that i planned to implement for future updates:
 - [x] Basic Design and API Function
+- [x] Responsive Design
 - [x] Search Function
 - [ ] Background Changes According to Location Time
 - [ ] Error Message 
