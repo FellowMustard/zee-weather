@@ -1,6 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
 import SvgContainer from "./svg";
 function Card({ weather }) {
+  const [isCelcius, setIsCelcius] = useState(true);
+  const changeScale = (celcius) => {
+    if (celcius) {
+      setIsCelcius(true);
+    } else {
+      setIsCelcius(false);
+    }
+  };
   return (
     <section className="weather-card">
       <div className="top-section">
@@ -24,14 +32,25 @@ function Card({ weather }) {
           <div className="termometer-svg">
             <SvgContainer svgID="0001" />
           </div>
-          <button>C</button>
+          <button
+            onClick={() => changeScale(true)}
+            className={isCelcius ? "active" : ""}
+          >
+            C
+          </button>
           <span style={{ marginTop: "-5px" }}>|</span>
-          <button>F</button>
+          <button
+            onClick={() => changeScale(false)}
+            className={isCelcius ? "" : "active"}
+          >
+            F
+          </button>
         </div>
 
         <div className="temperature-box">
           <div className="temperature">
-            <span>{weather.tempC}°</span>
+            <span className={isCelcius ? "" : "hidden"}>{weather.tempC}°</span>
+            <span className={isCelcius ? "hidden" : ""}>{weather.tempF}°</span>
           </div>
         </div>
       </div>

@@ -203,7 +203,6 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 .location-name {
   font-size: 2rem;
@@ -266,6 +265,9 @@ button {
   -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.65) inset;
   -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.65) inset;
 }
+.hidden {
+  display: none;
+}
 @keyframes cardOpen {
   0% {
     height: 0%;
@@ -297,7 +299,7 @@ button {
   }
   .country-name {
     font-size: 0.8rem;
-    margin-left: 1px;
+    margin-left: 0px;
   }
   .termometer-svg {
     width: 40px;
@@ -311,5 +313,43 @@ button {
     font-size: 1.6rem;
     top: -10%;
     left: -20%;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65) inset;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65) inset;
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65) inset;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .search-container {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+  }
+  .timezone-time {
+    font-size: 2.5rem;
+  }
+  .location-name {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  .weather-card .bottom-section {
+    padding: 8px;
+  }
+  .country-name {
+    font-size: 0.6rem;
+    margin-left: 0px;
+  }
+  .termometer-svg {
+    width: 30px;
+    height: 30px;
+    margin-right: -10px;
+    margin-left: -30px;
+  }
+  .temperature {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    top: 0%;
+    left: -10%;
   }
 }

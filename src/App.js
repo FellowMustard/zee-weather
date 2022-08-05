@@ -7,6 +7,7 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [searchError, setSearchError] = useState(false);
   const [bgSetting, setBgSetting] = useState("morning");
+  const [isCelcius, setIsCelcius] = useState(true);
 
   const searchButton = (data) => {
     setSearchError(false);
@@ -93,12 +94,15 @@ function App() {
       country: currCountry,
       tempC: currTempC,
       tempF: currTempF,
+      isCelcius,
     });
   };
 
   const bgChange = (hour) => {
     hour = parseInt(hour);
+    console.log(hour);
     switch (hour) {
+      case 0:
       case 1:
       case 2:
       case 24:
@@ -107,7 +111,9 @@ function App() {
       case 21:
       case 20:
       case 19:
+        console.log("sini");
         setBgSetting("night");
+        break;
       case 18:
       case 17:
       case 16:
